@@ -51,7 +51,7 @@ app.get('/weather',(req, res)=>{
     geocode(address,(error,{longitude=0,lattitude=0,location}={}) => {
         if (error) return resError(res,error)
 
-        forecast(longitude,lattitude,(error,{temperature,feeltemp,weather,rain}={})=>{
+        forecast(longitude,lattitude,(error,{temperature,feeltemp,weather,rain,humidity}={})=>{
             if (error)  return resError(res,error)
             res.send({
                 inputloc:address,
@@ -61,7 +61,10 @@ app.get('/weather',(req, res)=>{
                 temperature,
                 feeltemp,
                 weather,
-                rain
+                rain,
+                humidity,
+                //mintemp,
+                //maxtemp
             })
         })
     })

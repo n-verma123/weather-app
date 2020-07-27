@@ -21,8 +21,13 @@ const forecast=(lattitude, longitude, callback)=>{
                     temperature: body.current.temperature,
                     weather: body.current.weather_descriptions[0],
                     rain: body.current.precip,
-                    feeltemp:body.current.feelslike
+                    feeltemp:body.current.feelslike,
+                    humidity: body.current.humidity,
+                    //mintemp: body.forecast[0].mintemp,
+                    //  maxtemp: body.forecast[0].maxtemp
                 }
+
+                console.log(fcast)
                 callback(undefined,fcast)
             }
         })

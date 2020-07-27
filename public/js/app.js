@@ -25,9 +25,11 @@ addressForm.addEventListener('submit',(e)=>{
             if (data.error) msg1.textContent=data.error
             else{
                 msg1.textContent=data.location
-                let val1 = "Temperature outside is "+data.temperature+" & It feel likes "+data.feeltemp+" degrees"+
-                      " degrees out. Rain Forecase is "+data.rain+"% "+
-                      "Weather is "+data.weather
+                let val1 = "Weather is "+data.weather+". It is currently "+data.temperature+" degree out & It feel likes "+data.feeltemp+
+                      " degrees. Rain Forecase is "+data.rain+"% and humidity is "+data.humidity+"%"
+
+                      //" Today temprature would be between "+data.mintemp+" - "+data.maxtemp
+                
                 console.log(data)
                 msg2.textContent=val1
             } 
